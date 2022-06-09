@@ -1,3 +1,4 @@
+
 <!-- ----- debut config -->
 <?php
 
@@ -7,25 +8,28 @@ if (!defined('DEBUG')) {
 }
 
 // Configuration de la base de données
-$dsn = 'mysql:dbname=gandonma;host=localhost;charset=utf8';
-$username = 'gandonma';
-$password = 'xRObCwcy';
+ $dsn = 'mysql:dbname=gandonma;host=localhost;charset=utf8';
+ $username = 'gandonma';
+ $password = 'xRObCwcy';
 
 
-// chemin absolu vers le répertoire du projet SUR DEV-ISI
+// chemin absolu vers le répertoire du projet SUR DEV-ISI 
 $root = dirname(dirname(__DIR__)) . "/";
 
 
 if (DEBUG) {
-    echo ("<ul>");
-    echo (" <li>dsn = $dsn</li>");
-    echo (" <li>username = $username</li>");
-    echo (" <li>password = $password</li>");
-    echo ("<li>---</li>");
-    echo (" <li>root = $root</li>");
+ echo ("<ul>");
+ echo (" <li>dsn = $dsn</li>");
+ echo (" <li>username = $username</li>");
+ echo (" <li>password = $password</li>");
+ echo ("<li>---</li>");
+ echo (" <li>root = $root</li>");
 
-    echo ("</ul>");
+ echo ("</ul>");
 }
 ?>
 
 <!-- ----- fin config -->
+
+
+
