@@ -17,6 +17,8 @@ $action = htmlspecialchars($param["action"]);
 // --- Liste des méthodes autorisées
 switch ($action) {
  case "familleReadAll" :
+    case "familleCreate":
+    case"familleCreated":
 
   ControllerFamille::$action();
   break;
