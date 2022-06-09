@@ -22,7 +22,7 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.html');
       </thead>
       <tbody>
           <?php
-          // La liste des vins est dans une variable $results             
+
           foreach ($results as $element) {
            printf("<tr><td>%d</td><td>%s</td></tr>", $element->getId(),
              $element->getNom());

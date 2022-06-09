@@ -2,6 +2,7 @@
 <!-- ----- debut Router1 -->
 <?php
 require('../controller/ControllerFamille.php');
+require('../controller/ControllerAccueil.php');
 
 // --- récupération de l'action passée dans l'URL
 $query_string = $_SERVER['QUERY_STRING'];
@@ -23,7 +24,7 @@ switch ($action) {
  // Tache par défaut
  default:
   $action = "caveAccueil";
-  ControllerFamille::$action();
+  ControllerAccueil::$action();
 }
 ?>
 <!-- ----- Fin Router1 -->
