@@ -1,5 +1,5 @@
 <?php
-echo "test";
-echo "retest";
+
+header('Location: app/router/router.php?action=truc');
 
 ?>
