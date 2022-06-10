@@ -40,6 +40,33 @@ class ControllerFamille {
         require ($vue);
     }
 
+
+
+    // Affiche un formulaire pour sélectionner un nom qui existe
+    public static function familleReadNom($args) {
+
+        if (!DEBUG) echo ("ControllerFamille::familleReadNom:begin</br>");            // A quoi ça sert ?
+        $results = ModelFamille::getAllNom();
+
+        $target = $args["target"];
+        if (DEBUG) echo ("ControllerFamille::familleReadNom : target = $target</br>");
+
+        // ----- Construction chemin de la vue
+        include 'config.php';
+        $vue = $root . '/app/view/famille/viewNom.php';
+        require ($vue);
+    }
+
+    // Affiche une famille particuliere par son nom
+    public static function familleReadOne() {
+        $famille_nom = $_GET['nom'];
+        $results = ModelFamille::getOne($famille_nom);
+
+        // ----- Construction chemin de la vue
+        include 'config.php';
+        $vue = $root . '/app/view/famille/viewAll.php';
+        require ($vue);
+    }
  
 }
 ?>

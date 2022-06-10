@@ -14,19 +14,25 @@ parse_str($query_string, $param);
 // --- $action contient le nom de la méthode statique recherchée
 $action = htmlspecialchars($param["action"]);
 
+$action = $param["action"];
+unset($param["action"]);
+$args = $param;
+
 // --- Liste des méthodes autorisées
 switch ($action) {
  case "familleReadAll" :
     case "familleCreate":
     case"familleCreated":
+    case "familleReadOne" :
+    case "familleReadNom" :
 
-  ControllerFamille::$action();
+  ControllerFamille::$action($args);
   break;
 
  // Tache par défaut
  default:
   $action = "caveAccueil";
-  ControllerAccueil::$action();
+  ControllerAccueil::$action($args);
 }
 ?>
 <!-- ----- Fin Router1 -->

@@ -34,20 +34,7 @@ class ModelFamille {
   return $this->nom;
  }
 
-// retourne une liste des id
- public static function getAllId() {
-  try {
-   $database = Model::getInstance();
-   $query = "select id from famille";
-   $statement = $database->prepare($query);
-   $statement->execute();
-   $results = $statement->fetchAll(PDO::FETCH_COLUMN, 0);
-   return $results;
-  } catch (PDOException $e) {
-   printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
-   return NULL;
-  }
- }
+
 
  public static function getAll() {
   try {
@@ -88,6 +75,35 @@ class ModelFamille {
         }
     }
 
+    // retourne une liste des id
+    public static function getAllNom() {
+        try {
+            $database = Model::getInstance();
+            $query = "select nom from famille";
+            $statement = $database->prepare($query);
+            $statement->execute();
+            $results = $statement->fetchAll(PDO::FETCH_COLUMN, 0);
+            return $results;
+        } catch (PDOException $e) {
+            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            return NULL;
+        }
+    }
+    public static function getOne($nom) {
+        try {
+            $database = Model::getInstance();
+            $query = "select * from famille where nom = :nom";
+            $statement = $database->prepare($query);
+            $statement->execute([
+                'nom' => $nom
+            ]);
+            $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelFamille");
+            return $results;
+        } catch (PDOException $e) {
+            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            return NULL;
+        }
+    }
 
 
  public static function update() {
