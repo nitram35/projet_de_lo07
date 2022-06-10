@@ -1,6 +1,6 @@
 <!-- ----- debut ControllerAccueil -->
 <?php
-
+//test
 class ControllerAccueil{
     // --- page d'acceuil
     public static function caveAccueil() {
