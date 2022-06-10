@@ -57,14 +57,15 @@ class ControllerFamille {
         require ($vue);
     }
 
-    // Affiche une famille particuliere par son nom
+    // Affiche la famille sélectionnée par son nom
     public static function familleReadOne() {
-        $famille_nom = $_GET['nom'];
+     $famille_nom = $_GET['nom'];
+
         $results = ModelFamille::getOne($famille_nom);
 
         // ----- Construction chemin de la vue
         include 'config.php';
-        $vue = $root . '/app/view/famille/viewAll.php';
+        $vue = $root . '/app/view/famille/viewSelected.php';
         require ($vue);
     }
  

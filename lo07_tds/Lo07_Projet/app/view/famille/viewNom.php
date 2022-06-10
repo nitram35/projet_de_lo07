@@ -9,7 +9,7 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.html');
     include $root . '/app/view/fragment/fragmentCaveMenu.html';
     include $root . '/app/view/fragment/fragmentCaveJumbotron.html';
 
-    // $results contient un tableau avec la liste des clés.
+    // $results contient un tableau avec la liste des noms.
     ?>
 
     <form role="form" method='get' action='router1.php'>

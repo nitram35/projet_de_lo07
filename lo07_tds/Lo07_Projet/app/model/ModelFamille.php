@@ -75,7 +75,7 @@ class ModelFamille {
         }
     }
 
-    // retourne une liste des id
+    // retourne une liste des noms
     public static function getAllNom() {
         try {
             $database = Model::getInstance();
@@ -92,9 +92,10 @@ class ModelFamille {
     public static function getOne($nom) {
         try {
             $database = Model::getInstance();
-            $query = "select * from famille where nom = :nom";
+            $query = "select * from famille where  nom = :nom";
             $statement = $database->prepare($query);
             $statement->execute([
+
                 'nom' => $nom
             ]);
             $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelFamille");
