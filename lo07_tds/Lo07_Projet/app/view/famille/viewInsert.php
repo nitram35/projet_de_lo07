@@ -8,7 +8,7 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.html');
 <div class="container">
     <?php
     include $root . '/app/view/fragment/fragmentCaveMenu.html';
-    include $root . '/app/view/fragment/fragmentCaveJumbotron.html';
+    include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
     ?>
 
     <form role="form" method='get' action='router1.php'>

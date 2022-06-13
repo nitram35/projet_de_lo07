@@ -1,11 +1,14 @@
  
 <!-- ----- debut de la page cave_acceuil -->
-<?php include 'fragment/fragmentCaveHeader.html'; ?>
+<?php 
+session_start();
+include 'fragment/fragmentCaveHeader.html'; 
+?>
 <body>
   <div class="container">
     <?php
     include 'fragment/fragmentCaveMenu.html';
-    include 'fragment/fragmentCaveJumbotron.html';
+    include 'fragment/fragmentCaveJumbotron.php';
     ?>
   </div>   
   
