@@ -1,7 +1,7 @@
 
 <!-- ----- début viewAll -->
 <?php
-session_start();
+
 require ($root . '/app/view/fragment/fragmentCaveHeader.html');
 ?>
 
@@ -26,10 +26,9 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.html');
         </thead>
         <tbody>
         <?php
-
         foreach ($results as $element) {
-            printf("<tr><td>%d</td><td>%d</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td></tr>", $element->getIFamilleId(),
-                $element->getId(), $element->getIid(), $element->getEventType(), $element->getEventDate(), $element->getEventLieu();
+            printf("<tr><td>%d</td><td>%d</td><td>%d</td><td>%s</td><td>%s</td><td>%s</td></tr>", $element->getFamilleId(),
+                $element->getId(), $element->getIid(), $element->getEventType(), $element->getEventDate(), $element->getEventLieu());
         }
         ?>
         </tbody>

@@ -89,6 +89,7 @@ class ModelFamille {
             return NULL;
         }
     }
+
     public static function getOne($nom) {
         try {
             $database = Model::getInstance();
@@ -105,6 +106,23 @@ class ModelFamille {
             return NULL;
         }
     }
+
+    public static function getOneId($nom) {
+        try {
+            $database = Model::getInstance();
+            $query = "select distinct id from famille where  nom = :nom";
+            $statement = $database->prepare($query);
+            $statement->execute([
+                'nom' => $nom
+            ]);
+            $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelFamille");
+            return $results;
+        } catch (PDOException $e) {
+            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            return NULL;
+        }
+    }
+
 
 
  public static function update() {

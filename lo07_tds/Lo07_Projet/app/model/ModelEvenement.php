@@ -24,72 +24,62 @@ class ModelEvenement
     }
 
 
-    public function getFamilleId()
-    {
+    public function getFamilleId() {
         return $this->famille_id;
     }
 
-    public function setFamilleId($famille_id)
-    {
+    public function setFamilleId($famille_id) {
         $this->famille_id = $famille_id;
     }
 
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
-    public function setId($id)
-    {
+    public function setId($id) {
         $this->id = $id;
     }
 
-    public function getIid()
-    {
+    public function getIid() {
         return $this->iid;
     }
 
-    public function setIid($iid)
-    {
+    public function setIid($iid) {
         $this->iid = $iid;
     }
 
-    public function getEventType()
-    {
+    public function getEventType() {
         return $this->event_type;
     }
 
-    public function setEventType($event_type)
-    {
+    public function setEventType($event_type) {
         $this->event_type = $event_type;
     }
 
-    public function getEventDate()
-    {
+    public function getEventDate() {
         return $this->event_date;
     }
 
-    public function setEventDate($event_date)
-    {
+    public function setEventDate($event_date) {
         $this->event_date = $event_date;
     }
 
-    public function getEventLieu()
-    {
+    public function getEventLieu(){
         return $this->event_lieu;
     }
 
-    public function setEventLieu($event_lieu)
-    {
+    public function setEventLieu($event_lieu) {
         $this->event_lieu = $event_lieu;
     }
 
-    public static function getAll() {
+    public static function getAll($famille_id) {
         try {
             $database = Model::getInstance();
-            $query = "select * from evenement";
+            $query = "select * from evenement where famille_id = :famille_id";
             $statement = $database->prepare($query);
-            $statement->execute();
+            $statement->execute([
+                'famille_id' => $famille_id
+            ]);
             $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelEvenement");
             return $results;
         } catch (PDOException $e) {
@@ -97,6 +87,7 @@ class ModelEvenement
             return NULL;
         }
     }
+
 
 
 
