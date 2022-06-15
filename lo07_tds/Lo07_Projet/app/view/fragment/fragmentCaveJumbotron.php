@@ -1,16 +1,15 @@
-  
 <!-- ----- debut fragmentCaveJumbotron -->
 
 <div class="jumbotron">
-  
-  <?php
-    if (isset($_SESSION["nom_prenom"])){
-          $value= $_SESSION["nom_prenom"];}
-      else{
-          $value= "Pas de famille selectionee";} 
-  ?>
-    
-  <h1><?php $value ?> </h1>
+    <h1> <?php
+        if (isset($_SESSION["famille"])) {
+            echo $_SESSION["famille"];
+        }
+        else {
+            echo "Aucune famille selectionee";
+        }
+        ?> </h1>
+
 </div>
 <p/>
-<!-- ----- fin fragmentCaveJumbotron --> 
+<!-- ----- fin fragmentCaveJumbotron -->
