@@ -23,6 +23,7 @@ class ControllerFamille {
         $vue = $root . '/app/view/famille/viewInsert.php';
         require ($vue);
     }
+
 // Affiche un formulaire pour récupérer les informations d'une nouvelle famille.
     // La clé est gérée par le systeme et pas par l'internaute
     public static function familleCreated() {
@@ -39,7 +40,6 @@ class ControllerFamille {
         $vue = $root . '/app/view/famille/viewInserted.php';
         require ($vue);
     }
-
 
 
     // Affiche un formulaire pour sélectionner un nom qui existe
@@ -60,6 +60,8 @@ class ControllerFamille {
     // Affiche la famille sélectionnée par son nom
     public static function familleReadOne() {
      $famille_nom = $_GET['nom'];
+     session_start();
+     $_SESSION['famille']=$famille_nom;
 
         $results = ModelFamille::getOne($famille_nom);
 

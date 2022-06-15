@@ -17,7 +17,6 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.html');
     }
     else{
         echo ("<h2>La famille $famille_nom a été sélectionné </h2>");
-        $_SESSION['famille']= $famille_nom;
     }
 
     ?>
