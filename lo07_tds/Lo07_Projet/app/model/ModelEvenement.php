@@ -118,6 +118,14 @@ class ModelEvenement
     }
 
 
+    public static function update() {
+        echo ("ModelFamille : update() TODO ....");
+        return null;
+    }
 
+    public static function delete() {
+        echo ("ModelFamille : delete() TODO ....");
+        return null;
+    }
 
 }

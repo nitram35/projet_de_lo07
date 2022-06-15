@@ -1,0 +1,96 @@
+<?php
+require_once 'Model.php';
+
+class ModelIndividu
+{
+    private $famille_id, $id, $nom, $prenom, $sexe, $pere, $mere;
+
+    // pas possible d'avoir 2 constructeurs
+    public function __construct($famille_id = NULL, $id = NULL, $nom = NULL, $prenom = NULL, $sexe = NULL, $pere = NULL, $mere = NULL) {
+        // valeurs nulles si pas de passage de parametres
+        if (!is_null($famille_id) and !is_null($id)) {
+            $this->famille_id = $famille_id;
+            $this->id = $id;
+            $this->nom = $nom;
+            $this->prenom = $prenom;
+            $this->sexe = $sexe;
+            $this->pere = $pere;
+            $this->mere = $mere;
+        }
+    }
+
+    public function getFamilleId()
+    {
+        return $this->famille_id;
+    }
+
+    public function setFamilleId($famille_id)
+    {
+        $this->famille_id = $famille_id;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+    }
+
+    public function getSexe()
+    {
+        return $this->sexe;
+    }
+
+    public function setSexe($sexe)
+    {
+        $this->sexe = $sexe;
+    }
+
+    public function getPere()
+    {
+        return $this->pere;
+    }
+
+    public function setPere($pere)
+    {
+        $this->pere = $pere;
+    }
+
+    public function getMere()
+    {
+        return $this->mere;
+    }
+
+    public function setMere($mere)
+    {
+        $this->mere = $mere;
+    }
+
+
+
+
+}
+
