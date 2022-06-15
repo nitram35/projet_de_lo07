@@ -3,6 +3,7 @@
 <?php
 require('../controller/ControllerFamille.php');
 require('../controller/ControllerAccueil.php');
+require('../controller/ControllerEvenement.php');
 
 // --- récupération de l'action passée dans l'URL
 $query_string = $_SERVER['QUERY_STRING'];
@@ -28,6 +29,11 @@ switch ($action) {
 
   ControllerFamille::$action($args);
   break;
+
+    case "evenementReadAll" :
+
+    ControllerEvenement::$action($args);
+    break;
 
  // Tache par défaut
  default:
