@@ -21,7 +21,7 @@ $args = $param;
 
 // --- Liste des méthodes autorisées
 switch ($action) {
- case "familleReadAll" :
+    case "familleReadAll" :
     case "familleCreate":
     case"familleCreated":
     case "familleReadOne" :
@@ -31,6 +31,7 @@ switch ($action) {
   break;
 
     case "evenementReadAll" :
+    case "evenementCreate" :
 
     ControllerEvenement::$action($args);
     break;

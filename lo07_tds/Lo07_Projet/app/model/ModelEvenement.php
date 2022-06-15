@@ -88,6 +88,35 @@ class ModelEvenement
         }
     }
 
+    public static function insert($famille_id, $iid, $event_type, $event_date, $event_lieu) {
+        try {
+            $database = Model::getInstance();
+
+            // recherche de la valeur de la clé = max(id) + 1
+            $query = "select max(id) from evenement";
+            $statement = $database->query($query);
+            $tuple = $statement->fetch();
+            $id = $tuple['0'];
+            $id++;
+
+            // ajout d'un nouveau tuple;
+            $query = "insert into evenement value (:famille_id, :id, :iid, :event_type, :event_date, :event_lieu)";
+            $statement = $database->prepare($query);
+            $statement->execute([
+                'famille_id' => $famille_id,
+                'id' => $id,
+                'iid' => $iid,
+                'event_type' => $event_type,
+                'event_date' => $event_date,
+                'event_lieu' => $event_lieu
+            ]);
+            return $id;
+        } catch (PDOException $e) {
+            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            return -1;
+        }
+    }
+
 
 
 
