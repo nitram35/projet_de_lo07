@@ -90,6 +90,19 @@ class ModelIndividu
     }
 
 
+    public static function getAll() {
+        try {
+            $database = Model::getInstance();
+            $query = "select * from individu";
+            $statement = $database->prepare($query);
+            $statement->execute();
+            $results = $statement->fetchAll(PDO::FETCH_CLASS, "ModelIndividu");
+            return $results;
+        } catch (PDOException $e) {
+            printf("%s - %s<p/>\n", $e->getCode(), $e->getMessage());
+            return NULL;
+        }
+    }
 
 
 }

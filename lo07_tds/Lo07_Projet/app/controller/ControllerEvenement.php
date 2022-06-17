@@ -1,5 +1,6 @@
 <?php
 require_once '../model/ModelEvenement.php';
+require_once '../model/ModelIndividu.php';
 
 class ControllerEvenement {
 
