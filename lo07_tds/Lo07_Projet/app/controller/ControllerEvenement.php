@@ -28,7 +28,7 @@ class ControllerEvenement {
         $resultsIndividu = ModelIndividu::getAll();
         // ----- Construction chemin de la vue
         include 'config.php';
-        $vue = $root . '/app/view/famille/viewInsert.php';
+        $vue = $root . '/app/view/evenement/viewInsert.php';
         require ($vue);
     }
 
@@ -36,11 +36,11 @@ class ControllerEvenement {
     // La clé est gérée par le systeme et pas par l'internaute
     public static function evenementCreated() {
 
-        $results = ModelFamille::insert(htmlspecialchars($_GET['iid']));
+        $results = ModelFamille::insert(htmlspecialchars($_GET['iid'], $_GET['event_type'], $_GET['event_date'], $_GET['event_lieu']));
 
         // ----- Construction chemin de la vue
         include 'config.php';
-        $vue = $root . '/app/view/famille/viewInserted.php';
+        $vue = $root . '/app/view/evenement/viewInserted.php';
         require ($vue);
     }
 }
