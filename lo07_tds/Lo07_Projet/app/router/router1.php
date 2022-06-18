@@ -33,6 +33,7 @@ switch ($action) {
 
     case "evenementReadAll" :
     case "evenementCreate" :
+    case "evenementCreated" :
 
     ControllerEvenement::$action($args);
     break;
