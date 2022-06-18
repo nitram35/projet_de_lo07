@@ -32,8 +32,11 @@ class ControllerFamille {
         if ($_GET['nom'] == ''){
             $results = -1;
         }
-        else{
+        else{$famille_nom = $_GET['nom'];
+            session_start();
+            $_SESSION['famille']=$famille_nom;
             $results = ModelFamille::insert(htmlspecialchars($_GET['nom'])
+
             );
         }
         // ----- Construction chemin de la vue

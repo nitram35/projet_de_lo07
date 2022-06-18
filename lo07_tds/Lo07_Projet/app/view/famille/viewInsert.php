@@ -11,9 +11,11 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.html');
     include $root . '/app/view/fragment/fragmentCaveMenu.html';
     include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
     ?>
-
+    <h2>Ajout d'une famille</h2>
     <form role="form" method='get' action='router1.php'>
+
         <div class="form-group">
+
             <input type="hidden" name='action' value='familleCreated'>
             <label for="id">nom: </label><input type="text" name='nom' size='75' value='Deschamps'>
         </div>
@@ -22,6 +24,7 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.html');
     </form>
     <p/>
 </div>
+</body>
 <?php include $root . '/app/view/fragment/fragmentCaveFooter.html'; ?>
 
 <!-- ----- fin viewInsert -->

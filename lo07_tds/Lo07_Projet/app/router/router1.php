@@ -4,6 +4,7 @@
 require('../controller/ControllerFamille.php');
 require('../controller/ControllerAccueil.php');
 require('../controller/ControllerEvenement.php');
+require ('../controller/ControllerIndividu.php');
 
 // --- récupération de l'action passée dans l'URL
 $query_string = $_SERVER['QUERY_STRING'];
@@ -35,6 +36,18 @@ switch ($action) {
 
     ControllerEvenement::$action($args);
     break;
+
+    case "lienReadAll" :
+
+
+        ControllerLien::$action($args);
+        break;
+
+    case "individuReadAll" :
+
+
+        ControllerIndividu::$action($args);
+        break;
 
  // Tache par défaut
  default:

@@ -11,12 +11,13 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.html');
       include $root . '/app/view/fragment/fragmentCaveMenu.html';
       include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
       ?>
-
+      <h2>Liste des familles</h2>
     <table class = "table table-striped table-bordered">
       <thead>
         <tr>
-          <th scope = "col">id</th>
-          <th scope = "col">nom</th>
+            <th scope = "col">id</th>
+            <th scope = "col">nom</th>
+
 
         </tr>
       </thead>
@@ -24,8 +25,8 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.html');
           <?php
 
           foreach ($results as $element) {
-           printf("<tr><td>%d</td><td>%s</td></tr>", $element->getId(),
-             $element->getNom());
+           printf("<tr><td>%d</td><td>%s</td></tr>",$element->getId(),
+               $element->getNom());
           }
           ?>
       </tbody>

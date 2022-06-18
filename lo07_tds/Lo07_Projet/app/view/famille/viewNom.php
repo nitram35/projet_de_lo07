@@ -12,7 +12,7 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.html');
 
     // $results contient un tableau avec la liste des noms.
     ?>
-
+<h2>Selection d'une famille</h2>
     <form role="form" method='get' action='router1.php'>
         <div class="form-group">
             <input type="hidden" name='action' value=<?php echo ($target);?>>

@@ -1,6 +1,7 @@
 <!-- ----- début viewInsert -->
 
 <?php
+session_start();
 require ($root . '/app/view/fragment/fragmentCaveHeader.html');
 ?>
 
@@ -8,9 +9,9 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.html');
 <div class="container">
     <?php
     include $root . '/app/view/fragment/fragmentCaveMenu.html';
-    include $root . '/app/view/fragment/fragmentCaveJumbotron.html';
+    include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
     ?>
-
+    <h2>Ajout d'un évènement</h2>
     <form role="form" method='get' action='router1.php'>
         <input type="hidden" name='action' value='evenementCreated'>
 

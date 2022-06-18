@@ -1,22 +1,24 @@
 <!-- ----- début viewInserted -->
 <?php
-session_start();
+
 require ($root . '/app/view/fragment/fragmentCaveHeader.html');
 ?>
 
 <body>
 <div class="container">
+
     <?php
     include $root . '/app/view/fragment/fragmentCaveMenu.html';
     include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
     ?>
+    <h2>Ajout d'une famille</h2>
     <!-- ===================================================== -->
     <?php
     if ($results != -1) {
         echo ("<h3>La nouvelle famille a été créée </h3>");
         echo("<ul>");
         echo ("<li>id = " . $results . "</li>");
-        echo ("<li>nom = " . $_GET['nom'] . "</li>");
+        echo ("<li>nom = " . $_SESSION['famille'] . "</li>");
         echo("</ul>");
     } else {
         echo ("<h3>Problème d'insertion de la famille</h3>");
