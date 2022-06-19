@@ -4,6 +4,7 @@
 require('../controller/ControllerFamille.php');
 require('../controller/ControllerAccueil.php');
 require('../controller/ControllerEvenement.php');
+require ('../controller/ControllerLien.php');
 require ('../controller/ControllerIndividu.php');
 
 // --- récupération de l'action passée dans l'URL

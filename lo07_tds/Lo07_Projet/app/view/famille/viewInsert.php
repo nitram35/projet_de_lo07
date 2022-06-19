@@ -17,7 +17,7 @@ require ($root . '/app/view/fragment/fragmentCaveHeader.html');
         <div class="form-group">
 
             <input type="hidden" name='action' value='familleCreated'>
-            <label for="id">nom: </label><input type="text" name='nom' size='75' value='Deschamps'>
+            <label for="nom">nom: </label><input type="text" name='nom' size='75' value='Deschamps'>
         </div>
         <p/>
         <button class="btn btn-primary" type="submit">Soumettre</button>

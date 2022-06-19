@@ -4,9 +4,10 @@
 require_once '../model/ModelFamille.php';
 
 
+
 class ControllerFamille {
 
- // --- Liste des vins
+ // --- Liste des familles
  public static function familleReadAll() {
   $results = ModelFamille::getAll();
   // ----- Construction chemin de la vue

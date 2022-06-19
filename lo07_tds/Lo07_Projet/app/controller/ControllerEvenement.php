@@ -1,6 +1,8 @@
 <?php
 require_once '../model/ModelEvenement.php';
 require_once '../model/ModelIndividu.php';
+require_once '../model/ModelFamille.php';
+
 
 class ControllerEvenement {
 
