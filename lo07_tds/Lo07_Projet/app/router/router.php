@@ -26,14 +26,14 @@ switch ($action) {
     case "evenementReadAll" :
     case "evenementCreate" :
     case "evenementCreated" :
-        ControllerEvenement::$action();
+        ControllerEvenement::$action($args);
         break;
     case "familleReadAll" :
     case "familleCreate" :
     case "familleCreated" :
     case "familleReadNom" :
     case "familleReadOne" :
-        ControllerFamille::$action();
+        ControllerFamille::$action($args);
         break;
     case "individuReadAll" :
     case "individuCreate" :
@@ -47,13 +47,13 @@ switch ($action) {
     case "lienParentCreated" :
     case "lienUnionCreate" :
     case "lienUnionCreated" :
-        ControllerLien::$action();
+        ControllerLien::$action($args);
         break;
     
     //Tâche par défaut
     default :
         $action = "Accueil";
-        ControllerAccueil::$action();
+        ControllerAccueil::$action($args);
 }
 
 
