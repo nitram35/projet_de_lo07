@@ -1,30 +1,28 @@
-<!-- ----- début viewInsert -->
 
-<?php
-session_start();
-require ($root . '/app/view/fragment/fragmentCaveHeader.html');
+<!--   début viewInsert -->
+
+<?php 
+require ($root . '/app/view/fragment/fragmentHeader.html');
 ?>
 
 <body>
-<div class="container">
+  <div class="container">
     <?php
-    include $root . '/app/view/fragment/fragmentCaveMenu.html';
-    include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
-    ?>
-    <h2>Ajout d'une famille</h2>
-    <form role="form" method='get' action='router1.php'>
+      include $root . '/app/view/fragment/fragmentMenu.html';
+      include $root . '/app/view/fragment/fragmentJumbotron.php';
+    ?> 
 
-        <div class="form-group">
-
-            <input type="hidden" name='action' value='familleCreated'>
-            <label for="nom">nom: </label><input type="text" name='nom' size='75' value='Deschamps'>
-        </div>
-        <p/>
-        <button class="btn btn-primary" type="submit">Soumettre</button>
+    <form role="form" method='get' action='router.php'>
+      <div class="form-group">
+          <h2>Ajoutez une famille</h2>
+        <input type="hidden" name='action' value='familleCreated'>        
+        <label for="id">Nom : </label><input class="form-control" type="text" name='nom' value='' placeholder="Insérez un nom">
+      </div>
+      <p/>
+      <button class="btn btn-primary" type="submit">Soumettre le formulaire</button>
     </form>
     <p/>
-</div>
-</body>
-<?php include $root . '/app/view/fragment/fragmentCaveFooter.html'; ?>
+  </div>
+  <?php include $root . '/app/view/fragment/fragmentFooter.html'; ?>
 
-<!-- ----- fin viewInsert -->
+<!--   fin viewInsert -->

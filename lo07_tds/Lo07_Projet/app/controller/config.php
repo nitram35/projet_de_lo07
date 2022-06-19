@@ -1,17 +1,14 @@
 
-<!-- ----- debut config -->
+<!--   debut config -->
 <?php
 
 // Utile pour le débugage car c'est un interrupteur pour les echos et print_r.
 if (!defined('DEBUG')) {
     define('DEBUG', FALSE);
 }
-
-// Configuration de la base de données
  $dsn = 'mysql:dbname=gandonma;host=localhost;charset=utf8';
- $username = 'gandonma';
+ $username = 'gandonma';   
  $password = 'xRObCwcy';
-
 
 // chemin absolu vers le répertoire du projet SUR DEV-ISI 
 $root = dirname(dirname(__DIR__)) . "/";
@@ -29,7 +26,7 @@ if (DEBUG) {
 }
 ?>
 
-<!-- ----- fin config -->
+<!--   fin config -->
 
 
 

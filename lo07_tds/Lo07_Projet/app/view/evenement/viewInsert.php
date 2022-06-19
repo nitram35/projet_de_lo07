@@ -1,58 +1,51 @@
-<!-- ----- début viewInsert -->
 
-<?php
-session_start();
-require ($root . '/app/view/fragment/fragmentCaveHeader.html');
+<!--   début viewInsert -->
+
+<?php 
+require ($root . '/app/view/fragment/fragmentHeader.html');
 ?>
 
 <body>
-<div class="container">
+  <div class="container">
     <?php
-    include $root . '/app/view/fragment/fragmentCaveMenu.html';
-    include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
-    ?>
-    <h2>Ajout d'un évènement</h2>
-    <form role="form" method='get' action='router1.php'>
-        <input type="hidden" name='action' value='evenementCreated'>
+      include $root . '/app/view/fragment/fragmentMenu.html';
+      include $root . '/app/view/fragment/fragmentJumbotron.php';
+    ?> 
 
-        <div class="form-group">
-            <label for="individu">Selectionnez un individu :</label>
-            <select id="individu" class='form-control' name="iid">
-                <?php
-                foreach ($resultsIndividu as $element) {
-                    echo("<option value='".$element->getIid()."'>".$element->getNom()." : ".$element->getPrenom()."</option>");
-                }
-                ?>
-            </select>
-        </div>
+    <form role="form" method='get' action='router.php'>
+      <div class="form-group">
+          <h2>Ajoutez un évènement</h2>
+         <!-- On cache ce champ pour créer un evenement après-->
+        <input type="hidden" name='action' value='evenementCreated'>   
+        
+        <!-- On retrouve tout les noms et prénoms des indiv de la famille sélectionné pour récupérer l'id -->
+        <label for="id">Sélectionnez un individu de la famille : </label><select class="form-control" id="id" name="id">
+            <?PHP
+            foreach ($results as $element){
+                echo "<option value=".$element->getId().">".$element->getNom()." : ".$element->getPrenom()."</option>";
+            }
+            ?>
+        </select><br>
+                
+        <!--On choisit le type d'evenement que l'on souhaite-->
+        <label for="type">Sélectionnez un type d'évènement : </label><select class="form-control" id="type" name="type">
+            <option value='NAISSANCE'>NAISSANCE</option>
+            <option value='DECES'>DECES</option>
+        </select><br>
+        
+        <!--On insère la date de l'evenement-->
+        <label for="date">Date (AAAA-MM-JJ) ? </label><input class="form-control" type="text" name='date' size='75' value='' placeholder="Saisissez la date de l'évènement"><br>
 
-        <div class="form-group">
-            <label for="type">Selectionnez un type d'evenement :</label>
-            <select id="type" class='form-control' name="event_type">
-                <option value="naissance">NAISSANCE</option>
-                <option value="deces">DECES</option>
-            </select>
-        </div>
 
-        <div class="form-group">
-            <label for="date">Date (AAAA-MM-JJ) : </label>
-            <input type="text" name='event_date' size='75' value='2020-06-24'>
-        </div>
+        <!--On insère le lieu de l'evenement-->
+        <label for="lieu">Lieu ? </label><input class="form-control" type="text" name='lieu' size='75' value='' placeholder="Saisissez le lieu de l'évènement"><br>
+      </div>
 
-        <div class="form-group">
-            <label for="lieu">Lieu ? : </label>
-            <input type="text" name='event_lieu' size='75' value='Troyes'>
-        </div>
 
-        <p/>
-
-        <button class="btn btn-primary" type="submit">Go</button>
+      <button class="btn btn-primary" type="submit">Soumettre le formulaire</button>
     </form>
-    <p/>
-</div>
-<?php include $root . '/app/view/fragment/fragmentCaveFooter.html'; ?>
+    
+  </div>
+  <?php include $root . '/app/view/fragment/fragmentFooter.html'; ?>
 
-<!-- ----- fin viewInsert -->
-
-
-
+<!--   fin viewInsert -->

@@ -1,35 +1,35 @@
-<!-- ----- début viewNom -->
-<?php
-session_start();
-require ($root . '/app/view/fragment/fragmentCaveHeader.html');
+<!--   début viewNom -->
+<?php 
+require ($root . '/app/view/fragment/fragmentHeader.html');
 ?>
 
 <body>
-<div class="container">
-    <?php
-    include $root . '/app/view/fragment/fragmentCaveMenu.html';
-    include $root . '/app/view/fragment/fragmentCaveJumbotron.php';
+  <div class="container">
+      <?php
+      include $root . '/app/view/fragment/fragmentMenu.html';
+      include $root . '/app/view/fragment/fragmentJumbotron.php';
 
-    // $results contient un tableau avec la liste des noms.
-    ?>
-<h2>Selection d'une famille</h2>
-    <form role="form" method='get' action='router1.php'>
-        <div class="form-group">
-            <input type="hidden" name='action' value=<?php echo ($target);?>>
-            <label for="nom">nom: </label> <select class="form-control" id='nom' name='nom' style="width: 100px">
-                <?php
-                foreach ($results as $nom) {
-                    echo ("<option>$nom</option>");
-                }
-                ?>
-            </select>
-        </div>
-        <p/>
-        <button class="btn btn-primary" type="submit">Submit form</button>
+      ?>
+
+    <form role="form" method='get' action='router.php'>
+      <div class="form-group">
+          <h2>Sélectionnez une famille</h2>
+        <input type="hidden" name='action' value='familleReadOne'>
+        <label for="nom">nom : </label> <select class="form-control" id='nom' name='nom'">
+            <?php
+            foreach ($results as $nom) {
+             echo ("<option>$nom</option>");
+            }
+            ?>
+        </select>
+      </div>
+      <p/>
+      <button class="btn btn-primary" type="submit">Soumettre le formulaire</button>
     </form>
     <p/>
-</div>
+  </div>
 
-<?php include $root . '/app/view/fragment/fragmentCaveFooter.html'; ?>
+  <?php include $root . '/app/view/fragment/fragmentFooter.html'; ?>
 
-<!-- ----- fin viewNom -->
+  <!--   fin viewNom -->
+

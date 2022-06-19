@@ -1,13 +1,13 @@
-<!-- ----- debut ControllerAccueil -->
+<!--   debut ControllerAccueil -->
 <?php
 //test
 class ControllerAccueil{
     // --- page d'acceuil
-    public static function caveAccueil() {
+    public static function Accueil() {
         include 'config.php';
-        $vue = $root . '/app/view/viewCaveAccueil.php';
+        $vue = $root . '/app/view/viewAccueil.php';
         if (DEBUG)
-            echo ("ControllerFamille : caveAccueil : vue = $vue");
+            echo ("ControllerAccueil : Accueil : vue = $vue");
         require ($vue);
     }
 
@@ -18,4 +18,4 @@ class ControllerAccueil{
 
 }
 ?>
-<!-- ----- fin ControllerAccuezil -->
+<!--   fin ControllerAccuezil -->

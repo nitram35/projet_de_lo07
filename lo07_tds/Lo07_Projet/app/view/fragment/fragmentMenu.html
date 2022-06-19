@@ -1,0 +1,52 @@
+<!-- début fragmentMenu -->
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="router.php?action=Accueil">GANDON-GAYDA</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <!--FAMILLE -->
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+           aria-haspopup="true" aria-expanded="false">FAMILLE<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="router.php?action=familleReadAll">Liste des familles</a></li>
+          <li><a href="router.php?action=familleCreate">Ajout d'une famille</a></li>
+          <li><a href="router.php?action=familleReadNom">Sélection d'une famille</a></li>
+        </ul>
+      </li>
+      <!--EVENEMENTS -->
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+           aria-haspopup="true" aria-expanded="false">EVENEMENTS<span class="caret"></span></a>
+        <ul class="dropdown-menu">            
+          <li><a href="router.php?action=evenementReadAll">Liste des évènements</a></li>
+          <li><a href="router.php?action=evenementCreate">Ajout d'un évènement</a></li>
+        </ul>
+      </li>
+      <!--LIENS -->
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+           aria-haspopup="true" aria-expanded="false">LIENS<span class="caret"></span></a>
+        <ul class="dropdown-menu">            
+           <li><a href="router.php?action=lienReadAll">Liste des liens</a></li>
+           <li><a href="router.php?action=lienParentCreate">Ajout d'un lien parent</a></li>
+           <li><a href="router.php?action=lienUnionCreate">Ajout d'un lien d'union</a></li>
+        </ul>
+      </li>
+      <!--INDIVIDUS -->
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+           aria-haspopup="true" aria-expanded="false">INDIVIDUS<span class="caret"></span></a>
+        <ul class="dropdown-menu">            
+           <li><a href="router.php?action=individuReadAll">Liste des individus</a></li>
+           <li><a href="router.php?action=individuCreate">Ajout d'un individu</a></li>
+           <li><a href="router.php?action=individuReadOne">Page d'un individu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!--fin fragmentMenu -->

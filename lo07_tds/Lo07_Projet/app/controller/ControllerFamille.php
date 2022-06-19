@@ -1,85 +1,70 @@
-
-<!-- ----- debut ControllerVin -->
+<!--   debut ControllerFamille -->
 <?php
 require_once '../model/ModelFamille.php';
 
-
-
 class ControllerFamille {
+    
+    //Liste des familles
+    public static function familleReadAll() {
+        $results = ModelFamille::getAll();
+        //   Construction chemin de la vue
+        include 'config.php';
 
- // --- Liste des familles
- public static function familleReadAll() {
-  $results = ModelFamille::getAll();
-  // ----- Construction chemin de la vue
-  include 'config.php';
-  $vue = $root . '/app/view/famille/viewAll.php';
-  if (DEBUG)
-   echo ("ControllerFamille : familleReadAll : vue = $vue");
-  require ($vue);
- }
+        $vue = $root . '/app/view/famille/viewAll.php';
+        if (DEBUG)
+            echo ("ControllerFamille : familleReadAll : vue = $vue");
+        require ($vue);
+    }
 
-// Affiche le formulaire de creation d'une famille
+    // Affiche le formulaire de creation d'une famille
     public static function familleCreate() {
-        // ----- Construction chemin de la vue
+        //   Construction chemin de la vue
         include 'config.php';
         $vue = $root . '/app/view/famille/viewInsert.php';
         require ($vue);
     }
 
-// Affiche un formulaire pour récupérer les informations d'une nouvelle famille.
-    // La clé est gérée par le systeme et pas par l'internaute
-    public static function familleCreated() {
-        // ajouter une validation des informations du formulaire
-        if ($_GET['nom'] == ''){
-            $results = -1;
+    // Affiche un formulaire pour récupérer les informations d'une nouvelle famille.
+        public static function familleCreated() {
+        // On met en place une validation des infos
+        $validation=0;
+        if ($_GET['nom']==''){
+            $validation=1;
         }
-        else{$famille_nom = $_GET['nom'];
-            session_start();
-            $_SESSION['famille']=$famille_nom;
-            $results = ModelFamille::insert(htmlspecialchars($_GET['nom'])
-
-            );
+        else{
+            $results = ModelFamille::insert(htmlspecialchars($_GET['nom']));
         }
-        // ----- Construction chemin de la vue
+        $_SESSION['titre_jumbotron']=$_GET['nom'];
+        //   Construction chemin de la vue
         include 'config.php';
         $vue = $root . '/app/view/famille/viewInserted.php';
         require ($vue);
     }
 
-
-    // Affiche un formulaire pour sélectionner un nom qui existe
-    public static function familleReadNom($args) {
-
-        if (!DEBUG) echo ("ControllerFamille::familleReadNom:begin</br>");            // A quoi ça sert ?
+    // Formulaire sélection d'un nom qui existe
+    public static function familleReadNom() {
         $results = ModelFamille::getAllNom();
-
-        $target = $args["target"];
-        if (DEBUG) echo ("ControllerFamille::familleReadNom : target = $target</br>");
-
-        // ----- Construction chemin de la vue
+        
+        //   Construction chemin de la vue
         include 'config.php';
         $vue = $root . '/app/view/famille/viewNom.php';
         require ($vue);
     }
 
-    // Affiche la famille sélectionnée par son nom
+    // Affiche une famille particulière (en fct nom)
     public static function familleReadOne() {
-     $famille_nom = $_GET['nom'];
-     session_start();
-     $_SESSION['famille']=$famille_nom;
-
+        $famille_nom = $_GET['nom'];
         $results = ModelFamille::getOne($famille_nom);
-
-        // ----- Construction chemin de la vue
+        $_SESSION['titre_jumbotron']=$_GET['nom'];
+        $_SESSION['famille_id']=$results[0]->getId();
+        
+        //   Construction chemin de la vue
         include 'config.php';
         $vue = $root . '/app/view/famille/viewSelected.php';
         require ($vue);
     }
 
 
- 
-}
-?>
-<!-- ----- fin ControllerVin -->
-
-
+    
+}?>
+<!--   fin Controller -->
