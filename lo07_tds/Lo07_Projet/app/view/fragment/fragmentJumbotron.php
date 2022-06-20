@@ -3,17 +3,17 @@
 <?php 
 
 if (isset($_SESSION['titre_jumbotron']))
-    $titre = $_SESSION['titre_jumbotron'];
+    $titre_jumbotron = $_SESSION['titre_jumbotron'];
 
 ?>
 
 <div class="jumbotron">
     <h1> <?php 
     
-    if ($titre == "Aucune famille sélectionnée"){
-      echo "$titre";  
+    if ($titre_jumbotron == "Aucune famille sélectionnée"){
+      echo "$titre_jumbotron";
     } else {
-      echo "FAMILLE $titre";  
+      echo "FAMILLE $titre_jumbotron";
     }
      
     

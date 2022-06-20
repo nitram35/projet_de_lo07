@@ -16,9 +16,11 @@ require ($root . '/app/view/fragment/fragmentHeader.html');
       <div class="form-group">
           <h2>Ajout d'un individu dans la famille</h2>
         <input type="hidden" name='action' value='individuCreated'>  
-        <label for="nom">Nom : </label><input class="form-control" type="text" name='nom' size='75' value='' placeholder="Saisissez un nom"><br>
+        <label for="nom">Nom : </label>
+          <input class="form-control" type="text" name='nom' size='75' value='' placeholder="Saisissez un nom"><br>
         
-        <label for="prenom">Prenom : </label><input class="form-control" type="text" name='prenom' size='75' value='' placeholder="Saisissez un prénom"><br>
+        <label for="prenom">Prenom : </label>
+          <input class="form-control" type="text" name='prenom' size='75' value='' placeholder="Saisissez un prénom"><br>
 
         <p>Quelle est son sexe ?</p>
           <label class='radio-inline'><input type="radio" name="sexe" value='H'>Masculin</label>

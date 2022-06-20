@@ -2,6 +2,7 @@
 <?php
 if (empty($_SESSION['titre_jumbotron']))
     session_start();
+
 require '../controller/ControllerAccueil.php';
 require '../controller/ControllerEvenement.php';
 require '../controller/ControllerFamille.php';

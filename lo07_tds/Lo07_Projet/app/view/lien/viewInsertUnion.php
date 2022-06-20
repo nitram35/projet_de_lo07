@@ -49,10 +49,13 @@ require($root . '/app/view/fragment/fragmentHeader.html');
             </select><br>
 
             <!--On choisit la date de l'union-->
-            <label for="date">Date (AAAA-MM-JJ) ? </label><input class="form-control" type="text" name='date' size='75' value='' placeholder="Saisissez une date de la forme AAAA-MM-JJ"><br>
+            <label for="date">Date (AAAA-MM-JJ) ? </label><input class="form-control" type="text" name='date' size='75'
+                                                                 value=''
+                                                                 placeholder="Saisissez une date de la forme AAAA-MM-JJ"><br>
 
             <!--On choisit le lieu de l'union-->
-            <label for="lieu">Lieu ? </label><input class="form-control" type="text" name='lieu' size='75' value='' placeholder="Saisissez le lieu de l'union"><br>
+            <label for="lieu">Lieu ? </label><input class="form-control" type="text" name='lieu' size='75' value=''
+                                                    placeholder="Saisissez le lieu de l'union"><br>
 
             <button class="btn btn-primary" type="submit">Soumettre le formulaire</button>
         </div>

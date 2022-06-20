@@ -1,7 +1,8 @@
 <?php
 require_once 'Model.php';
 
-class ModelEvenement {
+class ModelEvenement
+{
     private $famille_id,
         $id,
         $iid,
@@ -9,7 +10,8 @@ class ModelEvenement {
         $event_date,
         $event_lieu;
 
-    public function __construct($famille_id=NULL, $id=NULL, $iid=NULL, $event_type=NULL, $event_date=NULL, $event_lieu=NULL) {
+    public function __construct($famille_id = NULL, $id = NULL, $iid = NULL, $event_type = NULL, $event_date = NULL, $event_lieu = NULL)
+    {
         if (!is_null($id) and !is_null($famille_id)) {
             $this->famille_id = $famille_id;
             $this->id = $id;
@@ -19,52 +21,71 @@ class ModelEvenement {
             $this->event_lieu = $event_lieu;
         }
     }
-    
-    public function getFamille_id() {
+
+    public function getFamille_id()
+    {
         return $this->famille_id;
     }
-    public function setFamille_id($famille_id) {
+
+    public function setFamille_id($famille_id)
+    {
         $this->famille_id = $famille_id;
     }
 
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
-    public function setId($id){
+
+    public function setId($id)
+    {
         $this->id = $id;
     }
 
 
-    public function getIid() {
+    public function getIid()
+    {
         return $this->iid;
     }
-    public function setIid($iid){
+
+    public function setIid($iid)
+    {
         $this->iid = $iid;
     }
 
-    public function getEventType() {
+    public function getEventType()
+    {
         return $this->event_type;
     }
-    public function setEventType($event_type){
+
+    public function setEventType($event_type)
+    {
         $this->event_type = $event_type;
     }
 
-    public function getEventDate() {
+    public function getEventDate()
+    {
         return $this->event_date;
     }
-    public function setEventDate($event_date) {
+
+    public function setEventDate($event_date)
+    {
         $this->event_date = $event_date;
     }
 
-    public function getEvent_lieu() {
+    public function getEvent_lieu()
+    {
         return $this->event_lieu;
     }
-    public function setEvent_lieu($event_lieu) {
+
+    public function setEvent_lieu($event_lieu)
+    {
         $this->event_lieu = $event_lieu;
     }
 
     //Renvoie les evenements propres à la famille selected
-    public static function getAll() {
+    public static function getAll()
+    {
         try {
             $database = Model::getInstance();
             $query = "select * from evenement where famille_id=:famille_id";
@@ -79,8 +100,9 @@ class ModelEvenement {
             return NULL;
         }
     }
-    
-    public static function insert($iid,$event_type,$event_date,$event_lieu) {
+
+    public static function insert($iid, $event_type, $event_date, $event_lieu)
+    {
         try {
             $database = Model::getInstance();
 
@@ -100,7 +122,7 @@ class ModelEvenement {
                 'iid' => $iid,
                 'event_type' => $event_type,
                 'event_date' => $event_date,
-                'event_lieu' => $event_lieu              
+                'event_lieu' => $event_lieu
             ]);
             return $id;
         } catch (PDOException $e) {
@@ -108,16 +130,20 @@ class ModelEvenement {
             return -1;
         }
     }
-    public static function update() {
-        echo ("ModelEvenement : update() TODO ....");
+
+    public static function update()
+    {
+        echo("ModelEvenement : update() TODO ....");
         return null;
     }
 
-    public static function delete() {
-        echo ("ModelEvenement : delete() TODO ....");
+    public static function delete()
+    {
+        echo("ModelEvenement : delete() TODO ....");
         return null;
     }
 
 }
+
 ?>
 <!--   fin ModelEvenement -->

@@ -63,5 +63,5 @@ class ControllerIndividu
         $vue = $root . '/app/view/individu/viewPageIndividu.php';
         require($vue);
     }
-}?>
+} ?>
 <!--   fin Controller -->

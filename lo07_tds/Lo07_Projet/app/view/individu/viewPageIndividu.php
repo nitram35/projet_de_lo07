@@ -10,10 +10,13 @@ require ($root . '/app/view/fragment/fragmentHeader.html');
     include $root . '/app/view/fragment/fragmentMenu.html';
     include $root . '/app/view/fragment/fragmentJumbotron.php';
     ?>
-    <!-- ===================================================== -->
+
+
     <?php
     //On affiche le nom et prénom de l'ind
     echo ("<h1 style='color:darkmagenta'>".$results['individu']['nom']." ".$results['individu']['prenom']."</h1>");
+
+
     //On affiche les évènements
     echo ("<h2>Evènements</h2>");
     echo ("<ul>");
@@ -25,6 +28,8 @@ require ($root . '/app/view/fragment/fragmentHeader.html');
     echo ($results['evenement']['DECES']['event_date']);
     echo (' à ');
     echo ($results['evenement']['DECES']['event_lieu']."</li></ul>");
+
+
     //Parents de l'individu
     echo ("<h2>Parents</h2>");
     echo ("<ul>");

@@ -1,39 +1,45 @@
-
 <!--   debut ModelFamille -->
 
 <?php
 require_once 'Model.php';
 
-class ModelFamille {
+class ModelFamille
+{
     private $id,
         $nom;
 
-    public function __construct($id = NULL, $nom = NULL) {
+    public function __construct($id = NULL, $nom = NULL)
+    {
         // valeurs nulles si pas de passage de parametres
         if (!is_null($id)) {
             $this->id = $id;
             $this->nom = $nom;
         }
     }
-    
-    public function getId() {
+
+    public function getId()
+    {
         return $this->id;
     }
 
-    public function setId($id) {
+    public function setId($id)
+    {
         $this->id = $id;
     }
 
-    public function getNom() {
+    public function getNom()
+    {
         return $this->nom;
     }
 
-    public function setNom($nom) {
+    public function setNom($nom)
+    {
         $this->nom = $nom;
     }
 
-    
-    public static function getAllNom() {
+
+    public static function getAllNom()
+    {
         try {
             $database = Model::getInstance();
             $query = "select nom from famille";
@@ -46,8 +52,10 @@ class ModelFamille {
             return NULL;
         }
     }
+
     // retourne une liste des id
-    public static function getAllId() {
+    public static function getAllId()
+    {
         try {
             $database = Model::getInstance();
             $query = "select id from famille";
@@ -60,8 +68,9 @@ class ModelFamille {
             return NULL;
         }
     }
-    
-    public static function getAll() {
+
+    public static function getAll()
+    {
         try {
             $database = Model::getInstance();
             $query = "select * from famille";
@@ -75,7 +84,8 @@ class ModelFamille {
         }
     }
 
-    public static function getOne($nom) {
+    public static function getOne($nom)
+    {
         try {
             $database = Model::getInstance();
             $query = "select * from famille where nom = :nom";
@@ -90,8 +100,9 @@ class ModelFamille {
             return NULL;
         }
     }
-    
-    public static function insert($nom) {
+
+    public static function insert($nom)
+    {
         try {
             $database = Model::getInstance();
 
@@ -115,13 +126,16 @@ class ModelFamille {
             return -1;
         }
     }
-    public static function update() {
-        echo ("ModelFamille : update() TODO ....");
+
+    public static function update()
+    {
+        echo("ModelFamille : update() TODO ....");
         return null;
     }
 
-    public static function delete() {
-        echo ("ModelFamille : delete() TODO ....");
+    public static function delete()
+    {
+        echo("ModelFamille : delete() TODO ....");
         return null;
     }
 }
