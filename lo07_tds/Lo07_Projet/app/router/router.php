@@ -1,4 +1,3 @@
-
 <!--   debut Router -->
 <?php
 if (empty($_SESSION['titre_jumbotron']))
@@ -23,17 +22,25 @@ $args = $param;
 
 // --- Liste des méthodes autorisées
 switch ($action) {
-    case "evenementReadAll" :
-    case "evenementCreate" :
-    case "evenementCreated" :
-        ControllerEvenement::$action($args);
-        break;
     case "familleReadAll" :
     case "familleCreate" :
     case "familleCreated" :
     case "familleReadNom" :
     case "familleReadOne" :
         ControllerFamille::$action($args);
+        break;
+    case "evenementReadAll" :
+    case "evenementCreate" :
+    case "evenementCreated" :
+        ControllerEvenement::$action($args);
+        break;
+
+    case "lienReadAll" :
+    case "lienParentCreate" :
+    case "lienParentCreated" :
+    case "lienUnionCreate" :
+    case "lienUnionCreated" :
+        ControllerLien::$action($args);
         break;
     case "individuReadAll" :
     case "individuCreate" :
@@ -42,21 +49,11 @@ switch ($action) {
     case "individuPage" :
         ControllerIndividu::$action($args);
         break;
-    case "lienReadAll" :
-    case "lienParentCreate" :
-    case "lienParentCreated" :
-    case "lienUnionCreate" :
-    case "lienUnionCreated" :
-        ControllerLien::$action($args);
-        break;
-    
     //Tâche par défaut
     default :
         $action = "Accueil";
         ControllerAccueil::$action($args);
 }
-
-
 ?>
 
 <!--   fin Router -->
