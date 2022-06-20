@@ -42,6 +42,7 @@ class ControllerIndividu
         require($vue);
     }
 
+//On veut afficher les infos d'un indiv selectionné
     public static function individuReadOne()
     {
         $results = ModelIndividu::getAll();
@@ -59,7 +60,7 @@ class ControllerIndividu
 
         //On construit la vue page d'un indiv (!!! partie la plus complexe du projet)
         include 'config.php';
-        $vue = $root . '/app/view/individu/viewPage.php';
+        $vue = $root . '/app/view/individu/viewPageIndividu.php';
         require($vue);
     }
 }?>
