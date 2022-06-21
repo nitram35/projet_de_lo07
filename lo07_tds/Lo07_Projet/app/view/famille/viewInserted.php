@@ -11,7 +11,7 @@ require($root . '/app/view/fragment/fragmentHeader.html');
     ?>
     <!-- ===================================================== -->
     <?php
-    if ($results) {
+    if ($results!= -1) {
         echo("<h4>La nouvelle famille a été ajoutée à la BDD </h4>");
         echo("<ul>");
         echo("<li>id = " . $results . "</li>");

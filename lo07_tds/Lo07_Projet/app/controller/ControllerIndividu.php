@@ -30,9 +30,9 @@ class ControllerIndividu
     public static function individuCreated()
     {
         //On valide les infos du formulaire
-        $validation = 0;
+
         if ($_GET['nom'] == '' || $_GET['prenom'] == '' || $_GET['sexe'] == '') {
-            $validation = 1;
+            $results = -1;
         } else {
             $results = ModelIndividu::insert(htmlspecialchars($_GET['nom']), htmlspecialchars($_GET['prenom']), htmlspecialchars($_GET['sexe']));
         }

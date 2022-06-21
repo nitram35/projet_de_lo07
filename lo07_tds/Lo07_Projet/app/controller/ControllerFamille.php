@@ -31,9 +31,8 @@ class ControllerFamille
     public static function familleCreated()
     {
         // On met en place une validation des infos
-        $validation = 0;
         if ($_GET['nom'] == '') {
-            $validation = 1;
+            $results = -1;
         } else {
             $results = ModelFamille::insert(htmlspecialchars($_GET['nom']));
         }
