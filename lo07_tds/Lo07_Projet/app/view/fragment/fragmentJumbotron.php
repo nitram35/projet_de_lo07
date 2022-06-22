@@ -15,8 +15,7 @@ if (isset($_SESSION['titre_jumbotron']))
     } else {
       echo "FAMILLE $titre_jumbotron";
     }
-     
-    
+
     ?> </h1>
 </div>
 <p/>

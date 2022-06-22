@@ -33,12 +33,12 @@ require ($root . '/app/view/fragment/fragmentHeader.html');
     //Parents de l'individu
     echo ("<h2>Parents</h2>");
     echo ("<ul>");
-    if ($results['individu']['mere']==0)
+    if ($results['individu']['mere_nom'] == 'nom inconnu')
         echo ("<li>Mère Inconnue</li>");
     else
         echo ("<li>Mère <a href='router.php?action=individuPage&id=".$results['individu']['mere']."'>".$results['individu']['mere_nom']." ".$results['individu']['mere_prenom']."</a></li>");
 
-    if ($results['individu']['pere']==0)
+    if ($results['individu']['pere_nom'] == 'nom inconnu')
         echo ("<li>Père Inconnu</li>");
     else
         echo ("<li>Père <a href='router.php?action=individuPage&id=".$results['individu']['pere']."'>".$results['individu']['pere_nom']." ".$results['individu']['pere_prenom']."</a></li>");

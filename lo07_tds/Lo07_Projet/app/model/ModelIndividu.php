@@ -150,7 +150,7 @@ class ModelIndividu
             $informations = [];
             $database = Model::getInstance();
 
-            //On récupère ttes les infos de l'indiv
+            //On récupère toutes les infos de l'individu
             $query = "select * from individu where id=:id and famille_id=:famille_id";
             $statement = $database->prepare($query);
             $statement->execute([
@@ -170,8 +170,16 @@ class ModelIndividu
                 'famille_id' => $_SESSION['famille_id']
             ]);
             $results = $statement->fetchAll();
-            $informations['individu']['mere_nom'] = $results[0]['nom'];
-            $informations['individu']['mere_prenom'] = $results[0]['prenom'];
+            if (empty($results[0]['nom']))
+                $informations['individu']['mere_nom'] = 'nom inconnu';
+            else
+                $informations['individu']['mere_nom'] = $results[0]['nom'];
+
+            if (empty($results[0]['prenom']))
+                $informations['individu']['mere_prenom'] = 'prénom inconnu';
+            else
+                $informations['individu']['mere_prenom'] = $results[0]['prenom'];
+
             //Pour le père
             $query = "select nom,prenom from individu where id=:id and famille_id=:famille_id";
             $statement = $database->prepare($query);
@@ -180,7 +188,14 @@ class ModelIndividu
                 'famille_id' => $_SESSION['famille_id']
             ]);
             $results = $statement->fetchAll();
-            $informations['individu']['pere_nom'] = $results[0]['nom'];
+            if (empty($results[0]['prenom']))
+                $informations['individu']['pere_nom'] = 'nom inconnu';
+            else
+                $informations['individu']['pere_nom'] = $results[0]['nom'];
+
+            if (empty($results[0]['prenom']))
+                $informations['individu']['pere_prenom'] = 'prénom inconnu';
+            else
             $informations['individu']['pere_prenom'] = $results[0]['prenom'];
 
 
