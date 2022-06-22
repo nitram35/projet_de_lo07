@@ -17,7 +17,7 @@ require($root . '/app/view/fragment/fragmentHeader.html');
         <tr>
             <th scope="col">famille_id</th>
             <th scope="col">id</th>
-            <th scope="col">idd</th>
+            <th scope="col">iid</th>
             <th scope="col">event_type</th>
             <th scope="col">event_date</th>
             <th scope="col">event_lieu</th>
