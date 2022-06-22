@@ -20,7 +20,9 @@ require($root . '/app/view/fragment/fragmentHeader.html');
     } else {
         echo("<h4>Problème dans l'ajout de la famille à la BDD</h4>");
         echo("Saisissez un nom valide, qui n'est pas déjà existant dans la BDD");
+        echo("<ul>");
         echo("id = " . $_GET['nom']);
+        echo("</ul>");
     }
 
     echo("</div>");
