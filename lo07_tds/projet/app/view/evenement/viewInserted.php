@@ -11,7 +11,7 @@ require($root . '/app/view/fragment/fragmentHeader.html');
     ?>
     <!-- ===================================================== -->
     <?php
-    if ($results) {
+    if ($results!=-1) {
         echo("<h4>Un nouvel évènement a été ajouté </h4>");
         echo("<ul>");
         echo("<li>famille_id = " . $_SESSION['famille_id'] . "</li>");
@@ -23,7 +23,9 @@ require($root . '/app/view/fragment/fragmentHeader.html');
         echo("</ul>");
     } else {
         echo("<h4>Problème dans l'ajout de l'évènement</h4>");
+        echo("<ul>");
         echo("id = " . $_GET['nom']);
+        echo("</ul>");
     }
 
     echo("</div>");

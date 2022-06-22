@@ -11,7 +11,7 @@ require($root . '/app/view/fragment/fragmentHeader.html');
     ?>
     <!-- ===================================================== -->
     <?php
-    if ($results) {
+    if ($results!= -1) {
         echo("<h4>L'individu a été ajouté à la famille</h4>");
         echo("<ul>");
         echo("<li>famille_id = " . $_SESSION['famille_id'] . "</li>");
